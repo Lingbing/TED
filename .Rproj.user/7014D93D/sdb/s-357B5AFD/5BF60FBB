@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Reshape a vector into a matrix\n#' \n#' This function reshapes a vector into a matrix whose row elements are taken from A. Orders of elements keep unchanged\n#' from the vector.\n#' \n#' @param x a vector or a time series\n#' @param w a number specifying number of columns of the matrix\n#' @export\n#' @examples\n#' x=ts2mat(c(1:(128*20)),128)\n#' dim(x)\n#' x[1,1:20]\n\n\nts2mat <- function(x, w) {\n    m = length(x)\n    mat <- matrix(0, floor(m/w), w)\n    for (i in 1:floor(m/w)) {\n        mat[i, ] = x[((i - 1) * w + 1):(i * w)]\n    }\n    return(mat)\n    \n} \n",
+    "created" : 1395561934405.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "605907604",
+    "id" : "5BF60FBB",
+    "lastKnownWriteTime" : 1395561940,
+    "path" : "~/Desktop/EventDetection/R/ts2mat.R",
+    "project_path" : "R/ts2mat.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

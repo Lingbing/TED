@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Conditionally detrend a time series\n#' \n#' This function detrend a time series when its linear trend is more significant than a threshold.\n#' \n#' @param x a vector or time series \n#' @param thres a scalar specifying the threshold. When the adjusted squared R square coefficient of the linear fitting \n#' is larger than this threshold, the linear trend is substracted from the original time series. Default is 0.85.\n#' @export\n#' @examples\n#' t=seq(0.001,1,0.001)\n#' x=10*t+rnorm(1000)\n#' dtrx=detrendc(x)\n#' plot(t,x,ty='l',xlab='t',ylab='x')\n#' lines(t,dtrx,col=2)\n#' legend(0,12,legend=c('x','detrended x'),col=c(1,2),lty=1)\n\n\ndetrendc <- function(x, thres = 0.85) {\n    n = length(x)\n    t = seq(1, n)\n    # fit linear regression\n    model = summary(fastLm(cbind(1, t), x))\n    coef = model$coefficients[2, 1]\n    # if the linear trend is more significant than the threshold, it is substracted from x\n    if (model$adj.r.squared > thres) {\n        detrended_x = x - coef * t\n    } else {\n        detrended_x = x\n    }\n    return(detrended_x)\n} \n",
+    "created" : 1395561921849.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3177561766",
+    "id" : "1513DB24",
+    "lastKnownWriteTime" : 1395561924,
+    "path" : "~/Desktop/EventDetection/R/detrendc.R",
+    "project_path" : "R/detrendc.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

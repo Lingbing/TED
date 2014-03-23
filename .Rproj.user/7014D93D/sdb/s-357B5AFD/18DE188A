@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Plot the detected events\n#' \n#' This function plot the detected events in a time series.\n\n#' \n#' @param x a vector or time series\n#' @param a a vector consisting of the starting points of all the detected events\n#' @param b a vector consisting of the ending points of all the detected events\n#' @param mycl a vector specifying which cluster each event belongs to\n#' @param ... other arguments that can be passed to plot\n#' @export\n#' @examples\n#' set.seed(4)\n#' n=128\n#' types=c('box','rc','cr','sine')\n#' shapes=matrix(NA,20,n)\n#' for (i in 1:20){\n#'   shapes[i,]=cbfs(type=types[sample(1:4,1)])\n#' }\n#' whitenoise=ts2mat(rnorm(128*20),128)\n#' x=c(rnorm(128),t(cbind(shapes,whitenoise)))\n#' plot(x,ty='l')\n#' w=128\n#' alpha=0.05\n#' events=eventDetection(x,w,alpha,'art')\n#' a=events$start\n#' b=events$end\n#' cc=eventCluster(x,a,b,4)\n#' myclkm=cc$cl\n#' plot.events(x,events$start,events$end,myclkm)\nplot.events <- function(x, a, b, mycl, ...) {\n    # plot the time series\n    plot(x, main = \"Events detected\", type = \"l\", xlab = \"t\", ylab = \"x\", ...)\n    # highlight the detected events\n    for (i in 1:length(a)) {\n        lines(c(a[i]:b[i]), x[a[i]:b[i]], col = mycl[i]+1)\n    }\n} \n",
+    "created" : 1395536793861.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2302818153",
+    "id" : "18DE188A",
+    "lastKnownWriteTime" : 1395562391,
+    "path" : "~/Desktop/EventDetection/R/plot.events.R",
+    "project_path" : "R/plot.events.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

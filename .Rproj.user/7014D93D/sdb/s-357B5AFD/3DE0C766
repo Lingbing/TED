@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Generate an artificial event with red noise\n#' \n#' This function generates a box, cliff-ramp, ramp-cliff or a sine function with red noise as the background noise.  Length\n#' of the generated event is 128.\n#' \n#' @param type type of the event to be generated. There are four options: 'box', 'rc','cr','sine' representing \n#' a box, cliff-ramp, ramp-cliff or a sine function.\n#' @param A amplitude of the event\n#' @param s standard deviation of the AR(1) model innovations.  Default is 1.\n#' @param coeff coefficient of the AR(1) process\n#' @export\n#' @examples\n#' x = cbfs_red(type = 'box', coeff=0.5, s=1, A=10)\n#' plot(x,type='l',xlab='t',ylab='x')\ncbfs_red <- function(type = c(\"box\", \"rl\", \"lr\", \"sine\"), A = 10, s = 1, coeff = 0.5) {\n    n = 128\n    t = 1:n\n    # simulate backgroud red noise\n    noise = arima.sim(list(order = c(1, 0, 0), ar = coeff), n = n, sd = s)\n    \n    if (type == \"box\") {\n        \n        # simulate an event\n        y = rep(0, length(t))\n        a = ceiling(runif(1) * 16) + 16\n        b = ceiling(runif(1) * 16) + 112\n        y[a:b] = rep(A, b - a + 1)\n        # add noise to the event\n        finalevent = y + noise\n        \n    }\n    if (type == \"rc\") {\n        # simulate an event\n        y = rep(0, length(t))\n        a = ceiling(runif(1) * 16) + 16\n        b = ceiling(runif(1) * 16) + 112\n        y[a:b] = A * (t[a:b] - a)/(b - a)\n        # add noise to the event\n        finalevent = y + noise\n    }\n    \n    if (type == \"cr\") {\n        # simulate an event\n        y = rep(0, length(t))\n        a = ceiling(runif(1) * 16) + 16\n        b = ceiling(runif(1) * 16) + 112\n        y[a:b] = A * (b - t[a:b])/(b - a)\n        # add noise to the event\n        finalevent = y + noise\n        \n    }\n    \n    if (type == \"sine\") {\n        # simulate an event\n        y = A/2 * sin(t/127 * 2 * pi - pi/2) + A/2\n        # add noise to the event\n        finalevent = y + noise\n        \n    }\n    \n    return(finalevent)\n    \n} \n",
+    "created" : 1395563970613.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3267128493",
+    "id" : "3DE0C766",
+    "lastKnownWriteTime" : 1395563974,
+    "path" : "~/Desktop/EventDetection/R/cbfs_red.R",
+    "project_path" : "R/cbfs_red.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

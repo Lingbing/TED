@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{impute}\n\\alias{impute}\n\\title{Impute missing values by automated variable selection}\n\\usage{\nimpute(missdata, lmFun = NULL, cFun = NULL, ini = NULL, maxiter = 100,\n  verbose = TRUE, conv = TRUE)\n}\n\\arguments{\n  \\item{missdata}{data matrix with missing values encoded\n  as NA.}\n\n  \\item{lmFun}{the variable selection method for continuous\n  data.}\n\n  \\item{cFun}{the variable selection method for categorical\n  data.}\n\n  \\item{ini}{the method for initilisation. It is a length\n  one character if missdata contains only one type of\n  variables only. For continous only data, ini can be\n  \"mean\" (mean imputation), \"median\" (median imputation) or\n  \"random\" (random guess), the default is \"mean\". For\n  categorical data, it can be either \"majority\" or\n  \"random\", the default is \"majority\". If missdata is mixed\n  of continuous and categorical data, then ini has to be a\n  vector of two characters, with the first element\n  indicating the method for continous variables and the\n  other element for categorical variables, and the default\n  is c(\"mean\", \"majority\".)}\n\n  \\item{maxiter}{is the maximum number of interations}\n\n  \\item{verbose}{is logical, if TRUE then detailed\n  information will be printed in the console while\n  running.}\n\n  \\item{conv}{logical, if TRUE, the convergence details\n  will be returned}\n}\n\\value{\nif conv = FALSE, then a completed data matrix, if TRUE, a\nlist\n}\n\\description{\nImpute missing values by automated variable selection\n}\n\n",
+    "created" : 1395532162426.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2936134771",
+    "id" : "18986489",
+    "lastKnownWriteTime" : 1395428976,
+    "path" : "~/Downloads/deleted/impute-master-2/man/impute.Rd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

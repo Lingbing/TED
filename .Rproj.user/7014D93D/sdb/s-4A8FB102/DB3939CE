@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{impute-package}\n\\alias{impute-package}\n\\docType{package}\n\\title{\nImpute missing values by automated variable selection\n}\n\\description{\nThe function 'impute' in this package is the main function that uses variable selection to impute missing values. Many different variable selection methods have been incorporated in this package and they are listed in the mannual. \n}\n\\details{\n\\tabular{ll}{\nPackage: \\tab impute\\cr\nType: \\tab Package\\cr\nVersion: \\tab 1.0\\cr\nDate: \\tab 2014-03-14\\cr\nLicense: GPL (>= 2)\n}\nThe function 'impute' in this package is the main function that uses variable selection to impute missing values. Many different variable selection methods have been incorporated in this package and they are listed in the mannual. \n}\n\\author{\nLingbing Feng\nMaintainer: Lingbing Feng <fenglb88@gmail.com>\n\n}\n\n\\keyword{imputation, variable selection}\n\\examples{\na <- 1\n}\n",
+    "created" : 1395532157463.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3365283276",
+    "id" : "DB3939CE",
+    "lastKnownWriteTime" : 1395428976,
+    "path" : "~/Downloads/deleted/impute-master-2/man/impute-package.Rd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

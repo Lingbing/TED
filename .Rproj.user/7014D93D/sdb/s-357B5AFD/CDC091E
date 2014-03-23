@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Detect events in time series\n#' \n#' This function find events from a  time series.\n#' \n#' @param x a time series\n#' @param w size of the sliding window\n#' @param alpha the significance level. When the noise test p value of the subsequence is smaller than this significance level,\n#' it is a potential event.\n#' @param data type of data being analysed. There are two options: 'art' if analysed data is artificial data and 'real' if \n#' analysed data is real world turbulence data.\n#' @export\n#' @examples\n#' set.seed(12345)\n#' n=128\n#' types=c('box','rc','cr','sine')\n#' shapes=matrix(NA,20,n)\n#' for (i in 1:20){\n#'   shapes[i,]=cbfs(type=types[sample(1:4,1)])\n#' }\n#' whitenoise=ts2mat(rnorm(128*20),128)\n#' x=c(t(cbind(shapes,whitenoise)))\n#' plot(x,ty='l')\n#' w=128\n#' alpha=0.05\n#' events=eventDetection(x,w,alpha,'art')\n\neventDetection <- function(x, w, alpha, data = c(\"art\", \"real\")) {\n    tests = noiseTests(x, w)\n    events = eventExtraction(tests, w, alpha)\n    nevents = events$nevents\n    data = match.arg(data)\n    if (data == \"art\") {\n        start = round((events$start + events$end)/2)\n        end = start + w - 1\n    }\n    if (data == \"real\") {\n        start = events$start + round(w/4)\n        end = events$end + w - 1 - round(w/4)\n    }\n    cat(length(start), \"events found.\")\n    results <- list(start = start, end = end, nevents = length(start))\n    return(results)\n} \n",
+    "created" : 1395483678191.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1096953735",
+    "id" : "CDC091E",
+    "lastKnownWriteTime" : 1395561893,
+    "path" : "~/Desktop/EventDetection/R/EventDetection.R",
+    "project_path" : "R/EventDetection.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
