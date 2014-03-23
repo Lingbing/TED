@@ -10,7 +10,7 @@
 #' @param ... other arguments that can be passed to plot
 #' @export
 #' @examples
-#' set.seed(4)
+#' set.seed(12345)
 #' n=128
 #' types=c('box','rc','cr','sine')
 #' shapes=matrix(NA,20,n)
