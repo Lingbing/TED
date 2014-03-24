@@ -33,7 +33,7 @@ This function find events from a time series.
 ##################################
 #   1st art eg (white noise)
 ##################################
-set.seed(12345)
+set.seed(123)
 n=128
 types=c('box','rc','cr','sine')
 shapes=matrix(NA,20,n)
@@ -45,11 +45,11 @@ x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 plot(x,ty='l')
 w=128
 alpha=0.05
-events=eventDetection(x,w,alpha,'art')
+events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
 ##################################
 #   2nd art eg (red noise)
 ##################################
-set.seed(12345)
+set.seed(123)
 coeff=0.5;s=1
 x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
     cbfs_red("rc"),arima.sim(list(order = c(1,0,0),ar=coeff),n=400,sd=s),

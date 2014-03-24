@@ -47,13 +47,13 @@
 #' registerDoMC(cores=8)
 #' tests=noiseTests(x,w,'white',parallel=TRUE)
 noiseTests <- function(x, w, noiseType = c("white", "red"),parallel=FALSE) {
-    registerDoMC(cores = 8)
     noiseType <- match.arg(noiseType)
     x = as.numeric(x)
     lx = length(x)
     N = length(x) - w + 1
     l = round(log(w))
     if (parallel){
+      registerDoMC(cores = 8)
     if (noiseType == "white") {
         testsPvalues = foreach(i = 1:N, .combine = c) %dopar% {
             xx = x[i:(i + w - 1)]
@@ -68,7 +68,7 @@ noiseTests <- function(x, w, noiseType = c("white", "red"),parallel=FALSE) {
             } else {
                 xx = na.approx(xx)
                 if (PP.test(xx)$p.value > 0.05) {
-                  ur.za.fast(xx, "both")
+                  ur.za.fast(xx, "both")$flag
                 } else {
                   xx = detrendc(xx)
                   model = ar(xx, order.max = 1, method = "ols")
@@ -96,7 +96,7 @@ noiseTests <- function(x, w, noiseType = c("white", "red"),parallel=FALSE) {
           } else {
             xx = na.approx(xx)
             if (PP.test(xx)$p.value > 0.05) {
-              ur.za.fast(xx, "both")
+              ur.za.fast(xx, "both")$flag
             } else {
               xx = detrendc(xx)
               model = ar(xx, order.max = 1, method = "ols")

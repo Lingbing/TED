@@ -13,9 +13,9 @@ ur.za.fast(y, model = c("intercept", "trend", "both"), lag = NULL)
   \item{lag}{a scalar chosen as lag}
 }
 \description{
-Allowing a structrual break, this function returns 0 if the
-time series is is stationary and 1 if it is a unit root
-process. This function is written refering to the
+Allowing a structrual break, this function returns flag to
+be 0 if the time series is is stationary and 1 if it is a
+unit root process. This function is written refering to the
 \code{ur.za} function in the \code{urza} package, but it
 speeds up executation using the linear regression function
 in the \code{RcppArmadillo} package.

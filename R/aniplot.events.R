@@ -24,14 +24,16 @@
 #' @examples
 #' set.seed(12345)
 #' x=c(rnorm(128),cbfs(type='box'),rnorm(128),cbfs(type='rc'),rnorm(128))
-#' aniplot.events(x,w=128,noiseType='white')
+#' aniplot.events(x,w=128,noiseType='white',outdir=getwd())
 
 aniplot.events <- function(x, w, noiseType = c("white", "red"), alpha = 0.05, main = "Animation plot of events", xlab = "t", ylab = "x", 
     movie.name = "animation.gif", interval = 0.05, ani.width = 1000, ani.height = 400, outdir = getwd()) {
     noiseType <- match.arg(noiseType)
     tests = c()
     eventsFound = c()
+    pbar <- tkProgressBar("test progress bar", "Some information in %", 0, 100, 50)
     saveGIF(for (i in 1:(length(x) - w)) {
+        setTkProgressBar(pbar, round(i/(length(x)-w)*100), sprintf("test (%s)", info), info)
         xsub = x[(i + 1):(w + i)]
         testx = noiseTests(xsub, w, noiseType)
         tests = c(tests, testx)

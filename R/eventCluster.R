@@ -4,9 +4,7 @@
 #' event.
 
 #' 
-#' @param x a vector or time series
-#' @param a a vector consisting of the starting points of all the detected events
-#' @param b a vector consisting of the ending points of all the detected events
+#' @param events An object of class 'events'.
 #' @param k0 the number of clusters
 #' @seealso \code{\link{measures}}
 #' @references Xiaozhe Wang, Kate Smith-Miles and  Rob Hyndman (2005). Characteristic-Based Clustering for Time Series Data.
@@ -14,7 +12,7 @@
 
 #' @export
 #' @examples
-#' set.seed(12345)
+#' set.seed(123)
 #' n=128
 #' types=c('box','rc','cr','sine')
 #' shapes=matrix(NA,20,n)
@@ -26,13 +24,14 @@
 #' plot(x,ty='l')
 #' w=128
 #' alpha=0.05
-#' events=eventDetection(x,w,alpha,'art')
-#' a=events$start
-#' b=events$end
-#' cc=eventCluster(x,a,b,4)
+#' events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+#' cc=eventCluster(events,4)
 #' myclkm=cc$cl
 
-eventCluster<-function(x,a,b,k0){
+eventCluster<-function(events,k0){
+  x=events$x
+  a=events$start
+  b=events$end
   eventmeasures=foreach (i=1:length(a),.combine=rbind) %dopar% {
     event=x[a[i]:b[i]]
     measures(event)

@@ -2,16 +2,10 @@
 \alias{eventCluster}
 \title{Cluster detected events}
 \usage{
-eventCluster(x, a, b, k0)
+eventCluster(events, k0)
 }
 \arguments{
-  \item{x}{a vector or time series}
-
-  \item{a}{a vector consisting of the starting points of
-  all the detected events}
-
-  \item{b}{a vector consisting of the ending points of all
-  the detected events}
+  \item{events}{An object of class 'events'.}
 
   \item{k0}{the number of clusters}
 }
@@ -21,7 +15,7 @@ clustering is based on statistical characteristics of
 event.
 }
 \examples{
-set.seed(12345)
+set.seed(123)
 n=128
 types=c('box','rc','cr','sine')
 shapes=matrix(NA,20,n)
@@ -33,10 +27,8 @@ x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 plot(x,ty='l')
 w=128
 alpha=0.05
-events=eventDetection(x,w,alpha,'art')
-a=events$start
-b=events$end
-cc=eventCluster(x,a,b,4)
+events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+cc=eventCluster(events,4)
 myclkm=cc$cl
 }
 \references{

@@ -8,5 +8,5 @@ Maintainer: Yanfei Kang <yanfei.kang@monash.edu>
 Description: EventDetection implements event detection and classification in turbulence time series. 
 LazyLoad: yes
 Repository: CRAN
-Depends: R (>= 2.10.0), RcppArmadillo, foreach, doMC, zoo, fields, animation, geoR
+Depends: R (>= 2.10.0), RcppArmadillo, foreach, doMC, zoo, fields, animation, geoR, tcltk
 License: GPL (>=2)

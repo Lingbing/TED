@@ -20,7 +20,7 @@
 #' ##################################
 #' #   1st art eg (white noise)
 #' ##################################
-#' set.seed(12345)
+#' set.seed(123)
 #' n=128
 #' types=c('box','rc','cr','sine')
 #' shapes=matrix(NA,20,n)
@@ -32,11 +32,11 @@
 #' plot(x,ty='l')
 #' w=128
 #' alpha=0.05
-#' events=eventDetection(x,w,alpha,'art')
+#' events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
 #' ##################################
 #' #   2nd art eg (red noise)
 #' ##################################
-#' set.seed(12345)
+#' set.seed(123)
 #' coeff=0.5;s=1
 #' x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
 #'     cbfs_red("rc"),arima.sim(list(order = c(1,0,0),ar=coeff),n=400,sd=s),
@@ -62,6 +62,6 @@ eventDetection <- function(x, w,noiseType = c("white", "red"),parallel=FALSE, al
         end = events$end + w - 1 - round(w/4)
     }
     cat(length(start), "events found.")
-    results <- list(start = start, end = end, nevents = length(start))
+    results <- structure(list(x=x, start = start, end = end, nevents = length(start)),class='events')
     return(results)
 } 

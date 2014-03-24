@@ -1,6 +1,6 @@
 #' Unit root test for events considering a structrual break
 #' 
-#' Allowing a structrual break, this function returns 0 if the time series is 
+#' Allowing a structrual break, this function returns flag to be 0 if the time series is 
 #' is stationary and 1 if it is a unit root process. This function is written refering to the \code{ur.za} function
 #' in the \code{urza} package, but it speeds up  executation using the linear regression function in the \code{RcppArmadillo}
 #' package.
@@ -86,5 +86,5 @@ ur.za.fast <- function(y, model = c("intercept", "trend", "both"), lag = NULL) {
     teststat <- roll.stat[bpoint]
     flag=ifelse(teststat<cval[2],0,1)
     #results = list(teststat = teststat, cval = cval, bpoint = bpoint,flag=flag)
-    return(flag)
+    return(list(flag=flag,teststat=teststat))
 } 

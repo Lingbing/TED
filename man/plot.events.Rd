@@ -2,16 +2,10 @@
 \alias{plot.events}
 \title{Plot the detected events}
 \usage{
-plot.events(x, a, b, cluster = FALSE, mycl, ...)
+plot.events(events, cluster = FALSE, mycl, ...)
 }
 \arguments{
-  \item{x}{a vector or time series}
-
-  \item{a}{a vector consisting of the starting points of
-  all the detected events}
-
-  \item{b}{a vector consisting of the ending points of all
-  the detected events}
+  \item{events}{an object of class 'events'.}
 
   \item{cluster}{logical, if TRUE then the detected events
   are highlighted using different colors for different
@@ -29,7 +23,7 @@ This function plot the detected events in a time series.
 ##################################
 #   1st art eg (white noise)
 ##################################
-set.seed(12345)
+set.seed(123)
 n=128
 types=c('box','rc','cr','sine')
 shapes=matrix(NA,20,n)
@@ -41,14 +35,14 @@ x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 plot(x,ty='l')
 w=128
 alpha=0.05
-events=eventDetection(x,w,alpha,'art')
-cc=eventCluster(x,events$start,events$end,4)
+events=eventDetection(x,w,'white',TRUE,alpha,'art')
+cc=eventCluster(events,4)
 myclkm=cc$cl
-plot.events(x,events$start,events$end,cluster=FALSE, myclkm)
+plot.events(events,cluster=TRUE, myclkm)
 ##################################
 #   2nd art eg (red noise)
 ##################################
-set.seed(12345)
+set.seed(123)
 coeff=0.5;s=1
 x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
     cbfs_red("rc"),arima.sim(list(order = c(1,0,0),ar=coeff),n=400,sd=s),
@@ -58,7 +52,7 @@ x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
     arima.sim(list(order = c(1,0,0),ar=0.8),n=1100,sd=4))
 w=128; alpha=0.05
 events=eventDetection(x,w,'red',parallel=TRUE,alpha,'art')
-plot.events(x,events$start,events$end)
+plot.events(events)
 }
 \seealso{
 \code{\link{noiseTests}}, \code{\link{eventExtraction}},

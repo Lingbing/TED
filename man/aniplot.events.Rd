@@ -21,7 +21,7 @@ aniplot.events(x, w, noiseType = c("white", "red"), alpha = 0.05,
   significance level, it is a potential event.}
 
   \item{main}{title of the animiation plot; default is
-  'Animation plot of events'.}
+  'Animation plot of event detection'.}
 
   \item{xlab}{x label of the animation plot; default is
   't'.}
@@ -48,12 +48,12 @@ aniplot.events(x, w, noiseType = c("white", "red"), alpha = 0.05,
 }
 \description{
 This function generates a gif file demonstrating how the
-event detection process is completed.
+event detection process is implemented.
 }
 \examples{
 set.seed(12345)
 x=c(rnorm(128),cbfs(type='box'),rnorm(128),cbfs(type='rc'),rnorm(128))
-aniplot.events(x,w=128,noiseType='white')
+aniplot.events(x,w=128,noiseType='white',outdir=getwd())
 }
 \references{
 Yihui Xie (2013). animation: An R Package for Creating
