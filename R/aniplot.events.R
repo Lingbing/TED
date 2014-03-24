@@ -1,6 +1,6 @@
 #' Generate a gif for the event detection process
 #' 
-#' This function generates a gif file demonstrating how the event detection process is completed.
+#' This function generates a gif file demonstrating how the event detection process is implemented.
 
 #'
 #' @param x a time series
