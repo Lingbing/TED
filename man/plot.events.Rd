@@ -5,7 +5,7 @@
 plot.events(events, cluster = FALSE, mycl, ...)
 }
 \arguments{
-  \item{events}{an object of class 'events'.}
+  \item{events}{an object of class `events'.}
 
   \item{cluster}{logical, if TRUE then the detected events
   are highlighted using different colors for different

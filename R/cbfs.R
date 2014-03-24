@@ -3,7 +3,7 @@
 #' This function generates a box, cliff-ramp, ramp-cliff or a sine function with white noise as the background noise. Length
 #' of the generated event is 128. Generation of events are similar to that of Cylinder-Bell-Funnel dataset in the reference below (Keogh and Lin 2005).
 #' 
-#' @param type type of the event to be generated. There are four options: 'box', 'rc','cr','sine' representing 
+#' @param type type of the event to be generated. There are four options: `box', `rc',`cr',`sine' representing 
 #' a box, cliff-ramp, ramp-cliff or a sine function.
 #' @param A amplitude of the event
 #' @param sigma a scalar specifying the level of white noise. Default is 1, which means the standard deviation of noise is 1.

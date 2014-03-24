@@ -3,7 +3,7 @@
 #' This function plot the detected events in a time series.
 
 #' 
-#' @param events an object of class 'events'.
+#' @param events an object of class `events'.
 #' @param cluster logical, if TRUE then the detected events are highlighted using different colors for different clusters
 #' @param mycl a vector specifying which cluster each event belongs to
 #' @param ... other arguments that can be passed to plot

@@ -9,10 +9,10 @@
 #'  to use by the \code{doMC} package
 #' @param alpha the significance level. When the noise test p value of the subsequence is smaller than this significance level,
 #' it is a potential event.
-#' @param data type of data being analysed. There are two options: 'art' if analysed data is artificial data and 'real' if 
+#' @param data type of data being analysed. There are two options: `art' if analysed data is artificial data and `real' if 
 #' analysed data is real world turbulence data.
 
-#' @return an object of class \code{events} with the components listed below:
+#' @return an object of class "events" with the components listed below:
 #' 
 #' \item{x}{the original time series}
 #' 

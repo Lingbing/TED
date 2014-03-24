@@ -23,11 +23,11 @@ eventDetection(x, w, noiseType = c("white", "red"), parallel = FALSE, alpha,
   significance level, it is a potential event.}
 
   \item{data}{type of data being analysed. There are two
-  options: 'art' if analysed data is artificial data and
-  'real' if analysed data is real world turbulence data.}
+  options: `art' if analysed data is artificial data and
+  `real' if analysed data is real world turbulence data.}
 }
 \value{
-an object of class \code{events} with the components listed
+an object of class "events" with the components listed
 below:
 
 \item{x}{the original time series}

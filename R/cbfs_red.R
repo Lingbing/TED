@@ -3,7 +3,7 @@
 #' This function generates a box, cliff-ramp, ramp-cliff or a sine function with red noise as the background noise.  Length
 #' of the generated event is 128.
 #' 
-#' @param type type of the event to be generated. There are four options: 'box', 'rc','cr','sine' representing 
+#' @param type type of the event to be generated. There are four options: `box', `rc',`cr',`sine' representing 
 #' a box, cliff-ramp, ramp-cliff or a sine function.
 #' @param A amplitude of the event
 #' @param s standard deviation of the AR(1) model innovations.  Default is 1.

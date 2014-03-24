@@ -7,7 +7,7 @@ cbfs_red(type = c("box", "rl", "lr", "sine"), A = 10, s = 1,
 }
 \arguments{
   \item{type}{type of the event to be generated. There are
-  four options: 'box', 'rc','cr','sine' representing a box,
+  four options: `box', `rc',`cr',`sine' representing a box,
   cliff-ramp, ramp-cliff or a sine function.}
 
   \item{A}{amplitude of the event}

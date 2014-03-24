@@ -4,7 +4,7 @@
 #' event.
 
 #' 
-#' @param events an object of class 'events'.
+#' @param events an object of class `events'.
 #' @param k0 the number of clusters
 #' @seealso \code{\link{measures}}
 #' @references Xiaozhe Wang, Kate Smith-Miles and  Rob Hyndman (2005). Characteristic-Based Clustering for Time Series Data.

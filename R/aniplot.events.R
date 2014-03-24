@@ -8,9 +8,9 @@
 #' @param noiseType background noise assumed for x. There are two options: white noise or red noise
 #' @param alpha the significance level. When the noise test p value of the subsequence is smaller than this significance level,
 #' it is a potential event.
-#' @param main title of the animiation plot; default is 'Animation plot of event detection'.
-#' @param xlab x label of the animation plot; default is 't'.
-#' @param ylab y label of the animation plot; default is 'x'.
+#' @param main title of the animiation plot; default is `Animation plot of event detection'.
+#' @param xlab x label of the animation plot; default is `t'.
+#' @param ylab y label of the animation plot; default is `x'.
 #' @param movie.name name of the output gif file; default is 'animation.gif'.
 #' @param interval a positive number to set the time interval of the animation (unit in seconds); default is 0.05.
 #' @param ani.width width of the gif file (unit in px), default is 1000.
