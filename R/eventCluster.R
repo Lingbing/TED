@@ -9,7 +9,9 @@
 #' @seealso \code{\link{measures}}
 #' @references Xiaozhe Wang, Kate Smith-Miles and  Rob Hyndman (2005). Characteristic-Based Clustering for Time Series Data.
 #' \emph{Data Mining and Knowledge Discovery}. \bold{13}(3), 335-364. \url{http://dx.doi.org//10.1007/s10618-005-0039-x}
-
+#' @return a list consisting of:
+#' \item{cl}{a vector indicating which cluster each event belongs to}
+#' \item{center}{a matrix which gives cluster centers} 
 #' @export
 #' @examples
 #' set.seed(123)

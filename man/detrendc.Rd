@@ -13,6 +13,9 @@ detrendc(x, thres = 0.85)
   is substracted from the original time series. Default is
   0.85.}
 }
+\value{
+detrended \code{x}
+}
 \description{
 This function detrend a time series when its linear trend
 is more significant than a threshold.

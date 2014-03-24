@@ -10,13 +10,16 @@ noiseTests(x, w, noiseType = c("white", "red"), parallel = FALSE)
   \item{w}{a scalar specifying the size of the sliding
   window}
 
-  \item{noiseType}{background noise assumed for x. There
-  are two options: white noise or red noise}
+  \item{noiseType}{background noise assumed for \code{x}.
+  There are two options: white noise or red noise}
 
   \item{parallel}{logical, if TRUE then codes are executed
   in parallel using the \code{foreach} package. The user
   must register a parallel backend to use by the
   \code{doMC} package}
+}
+\value{
+test \code{p} value series for the time series \code{x}.
 }
 \description{
 This function performs noise tests on the sliding

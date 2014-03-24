@@ -7,6 +7,7 @@
 #' a box, cliff-ramp, ramp-cliff or a sine function.
 #' @param A amplitude of the event
 #' @param sigma a scalar specifying the level of white noise. Default is 1, which means the standard deviation of noise is 1.
+#' @return an artificial event with white noise
 #' @references Eamonn Keogh and Jessica Lin (2005). Clustering of time-series subsequences is meaningless: implications for previous and future research. 
 #' \emph{Knowl. Inf. Syst.}, \bold{8}(2), 154-177. \url{http://dblp.uni- trier.de/db/journals/kais/kais8.html#KeoghL05}.
 #' @references Yanfei Kang, Kate Smith-Miles, Danijel Belusic (2013). How to extract meaningful shapes from noisy time-series subsequences? \emph{2013 IEEE Symposium on 

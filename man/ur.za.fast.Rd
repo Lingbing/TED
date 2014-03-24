@@ -12,6 +12,11 @@ ur.za.fast(y, model = c("intercept", "trend", "both"), lag = NULL)
 
   \item{lag}{a scalar chosen as lag}
 }
+\value{
+a list consisting of: \item{flag}{0 if the time series is
+is stationary; 1 if it is a unit root process}
+\item{teststat}{ZA unit root test statistic}
+}
 \description{
 Allowing a structrual break, this function returns flag to
 be 0 if the time series is is stationary and 1 if it is a

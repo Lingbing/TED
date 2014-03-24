@@ -15,6 +15,9 @@ cbfs(type = c("box", "rc", "cr", "sine"), A = 10, sigma = 1)
   noise. Default is 1, which means the standard deviation
   of noise is 1.}
 }
+\value{
+an artificial event with white noise
+}
 \description{
 This function generates a box, cliff-ramp, ramp-cliff or a
 sine function with white noise as the background noise.

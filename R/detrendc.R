@@ -5,6 +5,7 @@
 #' @param x a vector or time series 
 #' @param thres a scalar specifying the threshold. When the adjusted squared R square coefficient of the linear fitting 
 #' is larger than this threshold, the linear trend is substracted from the original time series. Default is 0.85.
+#' @return detrended \code{x}
 #' @export
 #' @examples
 #' t=seq(0.001,1,0.001)

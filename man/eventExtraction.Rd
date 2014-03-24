@@ -14,6 +14,18 @@ eventExtraction(tests, w, alpha = 0.05)
   p value of the subsequence is smaller than this
   significance level, it is a potential event.}
 }
+\value{
+a list consisting:
+
+\item{start}{a vector consisting of starting points of
+events}
+
+\item{end}{a vector consisting of ending points of events}
+
+\item{tests}{smoothed test \code{p} value series}
+
+\item{nevents}{number of detected events}
+}
 \description{
 This function returns the starting and ending points of
 events from a time series.

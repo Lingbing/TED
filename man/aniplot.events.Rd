@@ -46,6 +46,9 @@ aniplot.events(x, w, noiseType = c("white", "red"), alpha = 0.05,
   when exporting the animations; default to be the current
   working directory.}
 }
+\value{
+...
+}
 \description{
 This function generates a gif file demonstrating how the
 event detection process is implemented.

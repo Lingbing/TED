@@ -9,6 +9,10 @@
 #' @param y a time series
 #' @param model Three choices: 'intercept', 'trend' or 'both')
 #' @param lag a scalar chosen as lag
+#' @return a list consisting of:
+#' \item{flag}{0 if the time series is 
+#' is stationary; 1 if it is a unit root process}
+#' \item{teststat}{ZA unit root test statistic} 
 #' @seealso \code{\link{noiseTests}}
 #' @references Eric Zivot and Donald W K Andrews (1992). Further evidence on the great crash, the oil-price shock, and the unit-root hypothesis. \emph{Journal of Business & Economic Statistics}, 
 #' \bold{20}(1), 25-44. \url{http://dx.doi.org/10.1198/073500102753410372}.

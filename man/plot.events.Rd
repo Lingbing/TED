@@ -16,6 +16,9 @@ plot.events(events, cluster = FALSE, mycl, ...)
 
   \item{...}{other arguments that can be passed to plot}
 }
+\value{
+...
+}
 \description{
 This function plot the detected events in a time series.
 }

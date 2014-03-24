@@ -10,6 +10,9 @@ ts2mat(x, w)
   \item{w}{a number specifying number of columns of the
   matrix}
 }
+\value{
+a matrix
+}
 \description{
 This function reshapes a vector into a matrix whose row
 elements are taken from A. Orders of elements keep

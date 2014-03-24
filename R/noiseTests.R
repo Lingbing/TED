@@ -15,9 +15,10 @@
 #' 
 #' @param x a time series
 #' @param w a scalar specifying the size of the sliding window
-#' @param noiseType background noise assumed for x. There are two options: white noise or red noise
+#' @param noiseType background noise assumed for \code{x}. There are two options: white noise or red noise
 #' @param parallel logical, if TRUE then codes are executed in parallel using the \code{foreach} package. The user must register a parallel backend
 #'  to use by the \code{doMC} package 
+#' @return test \code{p} value series for the time series \code{x}.
 #' @seealso \code{\link{eventExtraction}}, \code{\link{plot.events}}
 #' @references Pierre Perron (1998). Trends and random walks in macroeconomic time series: Further evidence from a new approach. 
 #' \emph{Journal of economic dynamics and control}, \bold{12}(2), 297-332. \url{http://dx.doi.org/10.1016/0304-3932(82)90012-5}.

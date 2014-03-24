@@ -9,6 +9,11 @@ eventCluster(events, k0)
 
   \item{k0}{the number of clusters}
 }
+\value{
+a list consisting of: \item{cl}{a vector indicating which
+cluster each event belongs to} \item{center}{a matrix which
+gives cluster centers}
+}
 \description{
 This function groups the detected events into clusters. The
 clustering is based on statistical characteristics of

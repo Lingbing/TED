@@ -26,6 +26,19 @@ eventDetection(x, w, noiseType = c("white", "red"), parallel = FALSE, alpha,
   options: 'art' if analysed data is artificial data and
   'real' if analysed data is real world turbulence data.}
 }
+\value{
+an object of class \code{events} with the components listed
+below:
+
+\item{x}{the original time series}
+
+\item{start}{a vector consisting of starting points of
+events}
+
+\item{end}{a vector consisting of ending points of events}
+
+\item{nevents}{number of detected events}
+}
 \description{
 This function find events from a time series.
 }

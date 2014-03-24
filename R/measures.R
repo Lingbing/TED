@@ -6,6 +6,7 @@
 #' @param x a time series
 #' @param a a scalar specifying starting point of the event
 #' @param b a scalar specifying ending point of the event
+#' @return a vector consisting of statistical characteristics of event \code{x}
 #' @seealso \code{\link{eventCluster}}
 #' @export
 #' @examples

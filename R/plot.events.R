@@ -7,7 +7,9 @@
 #' @param cluster logical, if TRUE then the detected events are highlighted using different colors for different clusters
 #' @param mycl a vector specifying which cluster each event belongs to
 #' @param ... other arguments that can be passed to plot
+#' @return ...
 #' @seealso \code{\link{noiseTests}}, \code{\link{eventExtraction}}, \code{\link{EventDetection}}
+
 #' @export
 #' @examples
 #' ##################################

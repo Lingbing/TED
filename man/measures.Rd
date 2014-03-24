@@ -11,6 +11,10 @@ measures(x)
 
   \item{b}{a scalar specifying ending point of the event}
 }
+\value{
+a vector consisting of statistical characteristics of event
+\code{x}
+}
 \description{
 This function calculates statistical characteristics for
 detected events.

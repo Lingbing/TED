@@ -5,6 +5,7 @@
 #' 
 #' @param x a vector or a time series
 #' @param w a number specifying number of columns of the matrix
+#' @return a matrix
 #' @export
 #' @examples
 #' x=ts2mat(c(1:(128*20)),128)

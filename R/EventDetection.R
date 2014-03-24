@@ -11,6 +11,17 @@
 #' it is a potential event.
 #' @param data type of data being analysed. There are two options: 'art' if analysed data is artificial data and 'real' if 
 #' analysed data is real world turbulence data.
+
+#' @return an object of class \code{events} with the components listed below:
+#' 
+#' \item{x}{the original time series}
+#' 
+#' \item{start}{a vector consisting of starting points of events}
+#' 
+#' \item{end}{a vector consisting of ending points of events}
+#' 
+#' \item{nevents}{number of detected events}
+#' 
 #' @seealso \code{\link{noiseTests}}, \code{\link{eventExtraction}}, \code{\link{plot.events}}
 #' @references Yanfei Kang, Danijel Belusic, Kate Smith-Miles (2014): Detecting and Classifying Events in Noisy Time 
 #' Series. \emph{J. Atmos. Sci.}, \bold{71}, 1090-1104.
