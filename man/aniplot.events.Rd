@@ -30,7 +30,7 @@ aniplot.events(x, w, noiseType = c("white", "red"), alpha = 0.05,
   `x'.}
 
   \item{movie.name}{name of the output gif file; default is
-  'animation.gif'.}
+  `animation.gif'.}
 
   \item{interval}{a positive number to set the time
   interval of the animation (unit in seconds); default is
