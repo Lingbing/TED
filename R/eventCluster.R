@@ -26,7 +26,7 @@
 #' plot(x,ty='l')
 #' w=128
 #' alpha=0.05
-#' events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+#' events=EventDetection(x,w,'white',parallel=TRUE,alpha,'art')
 #' cc=eventCluster(events,4)
 #' myclkm=cc$cl
 

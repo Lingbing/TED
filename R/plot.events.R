@@ -27,7 +27,7 @@
 #' plot(x,ty='l')
 #' w=128
 #' alpha=0.05
-#' events=eventDetection(x,w,'white',TRUE,alpha,'art')
+#' events=EventDetection(x,w,'white',TRUE,alpha,'art')
 #' cc=eventCluster(events,4)
 #' myclkm=cc$cl
 #' plot.events(events,cluster=TRUE, myclkm)
@@ -43,7 +43,7 @@
 #'     cbfs_red("sine"),arima.sim(list(order = c(1,0,0),ar=coeff),n=1000,sd=s),
 #'     arima.sim(list(order = c(1,0,0),ar=0.8),n=1100,sd=4))
 #' w=128; alpha=0.05
-#' events=eventDetection(x,w,'red',parallel=TRUE,alpha,'art')
+#' events=EventDetection(x,w,'red',parallel=TRUE,alpha,'art')
 #' plot.events(events)
 plot.events <- function(events, cluster=FALSE, mycl, ...) {
     x=events$x

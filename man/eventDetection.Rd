@@ -1,8 +1,8 @@
-\name{eventDetection}
-\alias{eventDetection}
+\name{EventDetection}
+\alias{EventDetection}
 \title{Detect events in time series}
 \usage{
-eventDetection(x, w, noiseType = c("white", "red"), parallel = FALSE, alpha,
+EventDetection(x, w, noiseType = c("white", "red"), parallel = FALSE, alpha,
   data = c("art", "real"))
 }
 \arguments{
@@ -58,7 +58,7 @@ x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 plot(x,ty='l')
 w=128
 alpha=0.05
-events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+events=EventDetection(x,w,'white',parallel=TRUE,alpha,'art')
 ##################################
 #   2nd art eg (red noise)
 ##################################
@@ -71,7 +71,7 @@ x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
     cbfs_red("sine"),arima.sim(list(order = c(1,0,0),ar=coeff),n=1000,sd=s),
     arima.sim(list(order = c(1,0,0),ar=0.8),n=1100,sd=4))
 w=128; alpha=0.05
-events=eventDetection(x,w,'red',parallel=TRUE,alpha,'art')
+events=EventDetection(x,w,'red',parallel=TRUE,alpha,'art')
 }
 \references{
 Yanfei Kang, Danijel Belusic, Kate Smith-Miles (2014):

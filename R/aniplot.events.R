@@ -34,6 +34,7 @@ aniplot.events <- function(x, w, noiseType = c("white", "red"), alpha = 0.05, ma
     eventsFound = c()
     pbar <- tkProgressBar("test progress bar", "Some information in %", 0, 100, 50)
     saveGIF(for (i in 1:(length(x) - w)) {
+        info <- sprintf("%d%% done", round(i/(length(x)-w)*100))
         setTkProgressBar(pbar, round(i/(length(x)-w)*100), sprintf("test (%s)", info), info)
         xsub = x[(i + 1):(w + i)]
         testx = noiseTests(xsub, w, noiseType)

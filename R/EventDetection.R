@@ -43,7 +43,7 @@
 #' plot(x,ty='l')
 #' w=128
 #' alpha=0.05
-#' events=eventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+#' events=EventDetection(x,w,'white',parallel=TRUE,alpha,'art')
 #' ##################################
 #' #   2nd art eg (red noise)
 #' ##################################
@@ -56,9 +56,9 @@
 #'     cbfs_red("sine"),arima.sim(list(order = c(1,0,0),ar=coeff),n=1000,sd=s),
 #'     arima.sim(list(order = c(1,0,0),ar=0.8),n=1100,sd=4))
 #' w=128; alpha=0.05
-#' events=eventDetection(x,w,'red',parallel=TRUE,alpha,'art')
+#' events=EventDetection(x,w,'red',parallel=TRUE,alpha,'art')
 
-eventDetection <- function(x, w,noiseType = c("white", "red"),parallel=FALSE, alpha, data = c("art", "real")) {
+EventDetection <- function(x, w,noiseType = c("white", "red"),parallel=FALSE, alpha, data = c("art", "real")) {
     noiseType <- match.arg(noiseType)
     tests = noiseTests(x, w, noiseType = noiseType, parallel=parallel)
     events = eventExtraction(tests, w, alpha)

@@ -6,10 +6,6 @@ measures(x)
 }
 \arguments{
   \item{x}{a time series}
-
-  \item{a}{a scalar specifying starting point of the event}
-
-  \item{b}{a scalar specifying ending point of the event}
 }
 \value{
 a vector consisting of statistical characteristics of event
