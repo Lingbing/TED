@@ -1,0 +1,18 @@
+Package: EventDetection
+Type: Package
+Title: Detect and classify events from turbulence time series
+Version: 1.0
+Date: 2014-03-20
+Author: Yanfei Kang, Danijel Belusic and Kate Smith-Miles
+Maintainer: Yanfei Kang <yanfei.kang@monash.edu>
+<<<<<<< HEAD
+Description: EventDetection implements event detection and classification in turbulence time series. The event detection step recognises events as the subsequences which are significantly different from noise. It does not reply on pre-assumption of events in terms of their magnitude, geometry, or stationarity. The event classification step is to classify the events into groups with similar characteristics. Examples can be found for both artificial data and real world turbulence data.
+=======
+Description: EventDetection implements event detection and classification in turbulence time series. 
+The event detection step recognises events as the subsequences which are significantly different from noise.
+It does not reply on pre-assumption of events in terms of their magnitude, geometry, or stationarity. 
+The event classification step is to classify the events into groups with similar characteristics. 
+Examples can be found for both artificial data and real world turbulence data.
+>>>>>>> dbf2e12173a5cc2e1650bb10abc6c8d3c70c6d5f
+Depends: R (>= 2.0.0), RcppArmadillo, foreach, doMC, zoo, fields, animation, geoR
+License: GPL (>=2)
