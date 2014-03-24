@@ -5,7 +5,7 @@
 eventCluster(events, k0)
 }
 \arguments{
-  \item{events}{An object of class 'events'.}
+  \item{events}{an object of class 'events'.}
 
   \item{k0}{the number of clusters}
 }
