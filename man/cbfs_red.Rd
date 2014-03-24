@@ -18,7 +18,7 @@ cbfs_red(type = c("box", "rl", "lr", "sine"), A = 10, s = 1,
   \item{coeff}{coefficient of the AR(1) process}
 }
 \value{
-an artificial event with white noise
+an artificial event with red noise
 }
 \description{
 This function generates a box, cliff-ramp, ramp-cliff or a

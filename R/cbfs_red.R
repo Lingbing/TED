@@ -8,7 +8,7 @@
 #' @param A amplitude of the event
 #' @param s standard deviation of the AR(1) model innovations.  Default is 1.
 #' @param coeff coefficient of the AR(1) process
-#' @return an artificial event with white noise
+#' @return an artificial event with red noise
 #' @export
 #' @examples
 #' x = cbfs_red(type = 'box', coeff=0.5, s=1, A=10)
