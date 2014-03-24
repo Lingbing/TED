@@ -55,4 +55,14 @@ set.seed(12345)
 x=c(rnorm(128),cbfs(type='box'),rnorm(128),cbfs(type='rc'),rnorm(128))
 aniplot.events(x,w=128,noiseType='white')
 }
+\references{
+Yihui Xie (2013). animation: An R Package for Creating
+Animations and Demonstrating Statistical Methods.
+\emph{Journal of Statistical Software}, \bold{53}(1), 1-27.
+\url{http://www.jstatsoft.org/v53/ i01/}.
+}
+\seealso{
+\code{\link{noiseTests}}, \code{\link{eventExtraction}},
+\code{\link{plot.events}}
+}
 

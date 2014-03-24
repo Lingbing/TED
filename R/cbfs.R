@@ -1,12 +1,18 @@
 #' Generate an artificial event with white noise
 #' 
 #' This function generates a box, cliff-ramp, ramp-cliff or a sine function with white noise as the background noise. Length
-#' of the generated event is 128.
+#' of the generated event is 128. Generation of events are similar to that of Cylinder-Bell-Funnel dataset in the reference below (Keogh and Lin 2005).
 #' 
 #' @param type type of the event to be generated. There are four options: 'box', 'rc','cr','sine' representing 
 #' a box, cliff-ramp, ramp-cliff or a sine function.
 #' @param A amplitude of the event
 #' @param sigma a scalar specifying the level of white noise. Default is 1, which means the standard deviation of noise is 1.
+#' @references Eamonn Keogh and Jessica Lin (2005). Clustering of time-series subsequences is meaningless: implications for previous and future research. 
+#' \emph{Knowl. Inf. Syst.}, \bold{8}(2), 154-177. \url{http://dblp.uni- trier.de/db/journals/kais/kais8.html#KeoghL05}.
+#' @references Yanfei Kang, Kate Smith-Miles, Danijel Belusic (2013). How to extract meaningful shapes from noisy time-series subsequences? \emph{2013 IEEE Symposium on 
+#' Computational Intelligence and Data Mining}, Singapore, 65-72. \url{http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6597219&isnumber=6597208}. 
+#' @references Yanfei Kang, Danijel Belusic, Kate Smith-Miles (2014). Detecting and Classifying Events in Noisy Time Series. \emph{J. Atmos. Sci.}, \bold{71}, 1090-1104.
+#' \url{http://dx.doi.org/10.1175/JAS-D-13-0182.1}.
 #' @export
 #' @examples
 #' x1 = cbfs(type = 'box', sigma = 1)

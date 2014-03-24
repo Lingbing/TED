@@ -17,6 +17,9 @@
 #' @param ani.height height of the gif file (unit in px); default is 400.
 #' @param outdir character: specify the output directory when exporting the animations; default to be the 
 #' current working directory.
+#' @seealso \code{\link{noiseTests}}, \code{\link{eventExtraction}}, \code{\link{plot.events}}
+#' @references Yihui Xie (2013). animation: An R Package for Creating Animations and Demonstrating Statistical Methods. 
+#' \emph{Journal of Statistical Software}, \bold{53}(1), 1-27. \url{http://www.jstatsoft.org/v53/ i01/}.
 #' @export
 #' @examples
 #' set.seed(12345)

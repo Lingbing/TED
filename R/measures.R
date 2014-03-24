@@ -6,6 +6,7 @@
 #' @param x a time series
 #' @param a a scalar specifying starting point of the event
 #' @param b a scalar specifying ending point of the event
+#' @seealso \code{\link{eventCluster}}
 #' @export
 #' @examples
 #' set.seed(12345)

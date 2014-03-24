@@ -8,6 +8,10 @@
 #' @param a a vector consisting of the starting points of all the detected events
 #' @param b a vector consisting of the ending points of all the detected events
 #' @param k0 the number of clusters
+#' @seealso \code{\link{measures}}
+#' @references Xiaozhe Wang, Kate Smith-Miles and  Rob Hyndman (2005). Characteristic-Based Clustering for Time Series Data.
+#' \emph{Data Mining and Knowledge Discovery}. \bold{13}(3), 335-364. \url{http://dx.doi.org//10.1007/s10618-005-0039-x}
+
 #' @export
 #' @examples
 #' set.seed(12345)

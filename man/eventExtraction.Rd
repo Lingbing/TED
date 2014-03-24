@@ -18,4 +18,10 @@ eventExtraction(tests, w, alpha = 0.05)
 This function returns the starting and ending points of
 events from a time series.
 }
+\references{
+Yanfei Kang, Danijel Belusic, Kate Smith-Miles (2014):
+Detecting and Classifying Events in Noisy Time Series.
+\emph{J. Atmos. Sci.}, \bold{71}, 1090-1104.
+\url{http://dx.doi.org/10.1175/JAS-D-13-0182.1}.
+}
 

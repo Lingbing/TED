@@ -1,12 +1,23 @@
 #' Unit root test for events considering a structrual break
 #' 
-#' This function performs unit root test for events considering a structrual break.
+#' Allowing a structrual break, this function returns 0 if the time series is 
+#' is stationary and 1 if it is a unit root process. This function is written refering to the \code{ur.za} function
+#' in the \code{urza} package, but it speeds up  executation using the linear regression function in the \code{RcppArmadillo}
+#' package.
 
 #' 
 #' @param y a time series
 #' @param model Three choices: 'intercept', 'trend' or 'both')
 #' @param lag a scalar chosen as lag
+#' @seealso \code{\link{noiseTests}}
+#' @references Eric Zivot and Donald W K Andrews (1992). Further evidence on the great crash, the oil-price shock, and the unit-root hypothesis. \emph{Journal of Business & Economic Statistics}, 
+#' \bold{20}(1), 25-44. \url{http://dx.doi.org/10.1198/073500102753410372}.
 #' @export
+#' @examples
+#' x=cbfs_red('box')
+#' ur.za.fast(x,'both')
+#' x=cbfs_red('cr')
+#' ur.za.fast(x,'both')
 
 ur.za.fast <- function(y, model = c("intercept", "trend", "both"), lag = NULL) {
     n <- length(y)
@@ -73,6 +84,7 @@ ur.za.fast <- function(y, model = c("intercept", "trend", "both"), lag = NULL) {
         bpoint <- which.min(roll.stat)
     }
     teststat <- roll.stat[bpoint]
-    results = list(teststat = teststat, cval = cval, bpoint = bpoint)
-    return(results)
+    flag=ifelse(teststat<cval[2],0,1)
+    #results = list(teststat = teststat, cval = cval, bpoint = bpoint,flag=flag)
+    return(flag)
 } 

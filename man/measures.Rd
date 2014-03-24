@@ -21,4 +21,7 @@ n=128
 measures(cbfs('box'))
 measures(cbfs('sine'))
 }
+\seealso{
+\code{\link{eventCluster}}
+}
 
