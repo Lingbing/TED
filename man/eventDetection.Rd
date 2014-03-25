@@ -72,12 +72,25 @@ x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
     arima.sim(list(order = c(1,0,0),ar=0.8),n=1100,sd=4))
 w=128; alpha=0.05
 events=EventDetection(x,w,'red',parallel=TRUE,alpha,'art')
+##################################
+#   CASES-99 dataset
+##################################
+w=120; alpha=0.05
+CASESevents=EventDetection(CASES_l7,w,'red',parallel=TRUE,0.05,'real')
 }
 \references{
 Yanfei Kang, Danijel Belusic, Kate Smith-Miles (2014):
 Detecting and Classifying Events in Noisy Time Series.
 \emph{J. Atmos. Sci.}, \bold{71}, 1090-1104.
 \url{http://dx.doi.org/10.1175/JAS-D-13-0182.1}.
+
+Gregory S. Poulos, William Blumen, David C. Fritts, Julie
+K. Lundquist, Jielun Sun, Sean P. Burns, Carmen Nappo,
+Robert Banta, Rob Newsom, Joan Cuxart, Enric Terradellas,
+Ben Balsley, and Michael Jensen. CASES-99: A comprehensive
+investigation of the stable nocturnal boundary layer
+(2002). \emph{Bulletin of the American Meteorological
+Society}, \bold{83}(4):555-581.
 }
 \seealso{
 \code{\link{noiseTests}}, \code{\link{eventExtraction}},
