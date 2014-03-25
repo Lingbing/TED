@@ -7,7 +7,7 @@
 
 #' 
 #' @param y a time series
-#' @param model Three choices: `intercept', `trend' or `both')
+#' @param model Three choices: `intercept', `trend' or `both'
 #' @param lag a scalar chosen as lag
 #' @return a list consisting of:
 #' \item{flag}{0 if the time series is 

@@ -8,7 +8,7 @@ ur.za.fast(y, model = c("intercept", "trend", "both"), lag = NULL)
   \item{y}{a time series}
 
   \item{model}{Three choices: `intercept', `trend' or
-  `both')}
+  `both'}
 
   \item{lag}{a scalar chosen as lag}
 }
