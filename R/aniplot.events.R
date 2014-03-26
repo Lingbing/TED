@@ -24,8 +24,10 @@
 #' @export
 #' @examples
 #' set.seed(12345)
-#' x=c(rnorm(128),cbfs(type='box'),rnorm(128),cbfs(type='rc'),rnorm(128))
-#' aniplot.events(x,w=128,noiseType='white',outdir=getwd())
+#' # generate an artificial time series
+#' x=c(rnorm(128),cbfs(type="box"),rnorm(128),cbfs(type="rc"),rnorm(128))
+#' # generate a gif file to show the event detection process
+#' aniplot.events(x,w=128,noiseType="white",outdir=getwd())
 
 aniplot.events <- function(x, w, noiseType = c("white", "red"), alpha = 0.05, main = "Animation plot of events", xlab = "t", ylab = "x", 
     movie.name = "animation.gif", interval = 0.05, ani.width = 1000, ani.height = 400, outdir = getwd()) {

@@ -1,6 +1,6 @@
 #' Reshape a vector into a matrix
 #' 
-#' This function reshapes a vector into a matrix whose row elements are taken from A. Orders of elements keep unchanged
+#' This function reshapes a vector into a matrix whose row elements are taken from the vector. Orders of elements keep unchanged
 #' from the vector.
 #' 
 #' @param x a vector or a time series

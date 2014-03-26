@@ -55,8 +55,10 @@ event detection process is implemented.
 }
 \examples{
 set.seed(12345)
-x=c(rnorm(128),cbfs(type='box'),rnorm(128),cbfs(type='rc'),rnorm(128))
-aniplot.events(x,w=128,noiseType='white',outdir=getwd())
+# generate an artificial time series
+x=c(rnorm(128),cbfs(type="box"),rnorm(128),cbfs(type="rc"),rnorm(128))
+# generate a gif file to show the event detection process
+aniplot.events(x,w=128,noiseType="white",outdir=getwd())
 }
 \references{
 Yihui Xie (2013). animation: An R Package for Creating

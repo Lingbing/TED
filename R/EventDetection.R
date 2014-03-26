@@ -10,7 +10,7 @@
 #' @param alpha the significance level. When the noise test p value of the subsequence is smaller than this significance level,
 #' it is a potential event.
 #' @param data type of data being analysed. There are two options: `art' if analysed data is artificial data and `real' if 
-#' analysed data is real world turbulence data.
+#' analysed data is real world turbulence data. Please see the details in Kang et al. (2014).
 
 #' @return an object of class "events" with the components listed below:
 #' 
@@ -40,22 +40,26 @@
 #' ##################################
 #' set.seed(123)
 #' n=128
-#' types=c('box','rc','cr','sine')
+#' types=c("box","rc","cr","sine")
 #' shapes=matrix(NA,20,n)
 #' for (i in 1:20){
 #'   shapes[i,]=cbfs(type=types[sample(1:4,1)])
 #' }
 #' whitenoise=ts2mat(rnorm(128*20),128)
+#' # generate x which randomly combine the four types of events with each two of them 
+#' seperated by noise
 #' x=c(rnorm(128),t(cbind(shapes,whitenoise)))
-#' plot(x,ty='l')
-#' w=128
-#' alpha=0.05
-#' events=EventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+#' plot(x,ty="l")
+#' # specify a sliding window size and significant level
+#' w=128; alpha=0.05
+#' events=EventDetection(x,w,"white",parallel=TRUE,alpha,"art")
 #' ##################################
 #' #   2nd art eg (red noise)
 #' ##################################
 #' set.seed(123)
 #' coeff=0.5;s=1
+#' # generated x with red noise as the background; this time series is the one used in
+#'  Kang et al. (2014)
 #' x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
 #'     cbfs_red("rc"),arima.sim(list(order = c(1,0,0),ar=coeff),n=400,sd=s),
 #'     cbfs_red("cr"),arima.sim(list(order = c(1,0,0),ar=coeff),n=400,sd=s),
@@ -63,12 +67,14 @@
 #'     cbfs_red("sine"),arima.sim(list(order = c(1,0,0),ar=coeff),n=1000,sd=s),
 #'     arima.sim(list(order = c(1,0,0),ar=0.8),n=1100,sd=4))
 #' w=128; alpha=0.05
-#' events=EventDetection(x,w,'red',parallel=TRUE,alpha,'art')
+#' # event detection
+#' events=EventDetection(x,w,"red",parallel=TRUE,alpha,"art")
 #' ##################################
-#' #   CASES-99 dataset
+#' #   CASES-99 dataset (9.5m)
 #' ##################################
 #' w=120; alpha=0.05
-#' CASESevents=EventDetection(CASES_l7,w,'red',parallel=TRUE,0.05,'real')
+#' # event detection from CASES99 data
+#' CASESevents=EventDetection(CASES99,w,"red",parallel=TRUE,0.05,"real")
 
 EventDetection <- function(x, w,noiseType = c("white", "red"),parallel=FALSE, alpha, data = c("art", "real")) {
     noiseType <- match.arg(noiseType)

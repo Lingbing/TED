@@ -3,7 +3,7 @@
 #' This function generates a box, cliff-ramp, ramp-cliff or a sine function with red noise as the background noise.  Length
 #' of the generated event is 128.
 #' 
-#' @param type type of the event to be generated. There are four options: `box', `rc',`cr',`sine' representing 
+#' @param type type of the event to be generated. There are four options: ``box", ``rc",``cr",``sine" representing 
 #' a box, cliff-ramp, ramp-cliff or a sine function.
 #' @param A amplitude of the event
 #' @param s standard deviation of the AR(1) model innovations.  Default is 1.
@@ -11,8 +11,10 @@
 #' @return an artificial event with red noise
 #' @export
 #' @examples
-#' x = cbfs_red(type = 'box', coeff=0.5, s=1, A=10)
-#' plot(x,type='l',xlab='t',ylab='x')
+#' # generate a box function with red noise
+#' x = cbfs_red(type = "box", coeff=0.5, s=1, A=10)
+#' # plot it
+#' plot(x,type="l",xlab="t",ylab="x")
 cbfs_red <- function(type = c("box", "rl", "lr", "sine"), A = 10, s = 1, coeff = 0.5) {
     n = 128
     t = 1:n

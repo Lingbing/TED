@@ -7,8 +7,8 @@ ur.za.fast(y, model = c("intercept", "trend", "both"), lag = NULL)
 \arguments{
   \item{y}{a time series}
 
-  \item{model}{Three choices: `intercept', `trend' or
-  `both'}
+  \item{model}{Three choices: ``intercept", ``trend" or
+  ``both"}
 
   \item{lag}{a scalar chosen as lag}
 }
@@ -26,10 +26,10 @@ speeds up executation using the linear regression function
 in the \code{RcppArmadillo} package.
 }
 \examples{
-x=cbfs_red('box')
-ur.za.fast(x,'both')
-x=cbfs_red('cr')
-ur.za.fast(x,'both')
+x=cbfs_red("box")
+ur.za.fast(x,"both")
+x=cbfs_red("cr")
+ur.za.fast(x,"both")
 }
 \references{
 Eric Zivot and Donald W K Andrews (1992). Further evidence

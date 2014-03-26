@@ -25,33 +25,43 @@ clustering is based on statistical characteristics of
 event.
 }
 \examples{
+##################################
+#   An artificial example
+##################################
 set.seed(123)
 n=128
-types=c('box','rc','cr','sine')
+types=c("box","rc","cr","sine")
 shapes=matrix(NA,20,n)
 for (i in 1:20){
   shapes[i,]=cbfs(type=types[sample(1:4,1)])
 }
 whitenoise=ts2mat(rnorm(128*20),128)
+# generate x which randomly combine the four types of events with each two of them
+seperated by noise
 x=c(rnorm(128),t(cbind(shapes,whitenoise)))
-plot(x,ty='l')
+plot(x,ty="l")
+# specify a sliding window size
 w=128
+# specify a significant level
 alpha=0.05
-events=EventDetection(x,w,'white',parallel=TRUE,alpha,'art')
+# event detection
+events=EventDetection(x,w,"white",parallel=TRUE,alpha, "art")
+# clustering
 cc=eventCluster(events,4)
 myclkm=cc$cl
 ##################################
-#   CASES-99 dataset
+#   CASES-99 dataset (9.5m)
 ##################################
 w=120; alpha=0.05
-CASESevents=EventDetection(CASES_l7,w,'red',parallel=TRUE,0.05,'real')
+CASESevents=EventDetection(CASES99,w,"red",parallel=TRUE,0.05,"real")
 cc=eventCluster(CASESevents,3)
 cc$center
 myclkm=cc$cl
+# plot the clustering in 2-dimension PCA space
 pc.cr=cc$pca
 pca.dim1 <- pc.cr$scores[,1]
 pca.dim2 <- pc.cr$scores[,2]
-plot(pca.dim1,pca.dim2,col=myclkm+1,main='PCA plots for k-means clustering',pch=16)
+plot(pca.dim1,pca.dim2,col=myclkm+1,main="PCA plots for k-means clustering",pch=16)
 }
 \references{
 Xiaozhe Wang, Kate Smith-Miles and Rob Hyndman (2005).

@@ -7,7 +7,7 @@
 
 #' 
 #' @param y a time series
-#' @param model Three choices: `intercept', `trend' or `both'
+#' @param model Three choices: ``intercept", ``trend" or ``both"
 #' @param lag a scalar chosen as lag
 #' @return a list consisting of:
 #' \item{flag}{0 if the time series is 
@@ -18,10 +18,10 @@
 #' \bold{20}(1), 25-44. \url{http://dx.doi.org/10.1198/073500102753410372}.
 #' @export
 #' @examples
-#' x=cbfs_red('box')
-#' ur.za.fast(x,'both')
-#' x=cbfs_red('cr')
-#' ur.za.fast(x,'both')
+#' x=cbfs_red("box")
+#' ur.za.fast(x,"both")
+#' x=cbfs_red("cr")
+#' ur.za.fast(x,"both")
 
 ur.za.fast <- function(y, model = c("intercept", "trend", "both"), lag = NULL) {
     n <- length(y)

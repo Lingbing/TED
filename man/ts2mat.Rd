@@ -15,7 +15,7 @@ a matrix
 }
 \description{
 This function reshapes a vector into a matrix whose row
-elements are taken from A. Orders of elements keep
+elements are taken from the vector. Orders of elements keep
 unchanged from the vector.
 }
 \examples{

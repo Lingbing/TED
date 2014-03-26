@@ -11,7 +11,7 @@ noiseTests(x, w, noiseType = c("white", "red"), parallel = FALSE)
   window}
 
   \item{noiseType}{background noise assumed for \code{x}.
-  There are two options: white noise or red noise}
+  There are two options: ``white" or ``red"}
 
   \item{parallel}{logical, if TRUE then codes are executed
   in parallel using the \code{foreach} package. The user
@@ -48,24 +48,25 @@ structural break). Random walk processes result in
 non-rejection of the null hypothesis.
 }
 \examples{
-set.seed(12345)
+set.seed(123)
 n=128
-types=c('box','rc','cr','sine')
+types=c("box","rc","cr","sine")
 shapes=matrix(NA,20,n)
 for (i in 1:20){
   shapes[i,]=cbfs(type=types[sample(1:4,1)])
 }
 whitenoise=ts2mat(rnorm(128*20),128)
+# generate x which randomly combine the four types of events with each two of them
+seperated by noise
 x=c(t(cbind(shapes,whitenoise)))
-plot(x,ty='l')
+plot(x,ty="l")
 w=128
 # execute loops sequentially
-tests=noiseTests(x,w,'white',parallel=FALSE)
+tests=noiseTests(x,w,"white",parallel=FALSE)
 # execute loops in parallel
-# register a parallel backend
-library(doMC);library(foreach)
+# firstly register a parallel backend
 registerDoMC(cores=8)
-tests=noiseTests(x,w,'white',parallel=TRUE)
+tests=noiseTests(x,w,"white",parallel=TRUE)
 }
 \references{
 Pierre Perron (1998). Trends and random walks in

@@ -26,11 +26,14 @@ are similar to that of Cylinder-Bell-Funnel dataset in the
 reference below (Keogh and Lin 2005).
 }
 \examples{
-x1 = cbfs(type = 'box', sigma = 1)
-x2 = cbfs(type = 'box', sigma = 3)
+# generate a box function with white noise
+x1 = cbfs(type = "box", sigma = 1)
+# generate a box function with higher level noise
+x2 = cbfs(type = "box", sigma = 3)
+# plot them
 par(mfrow=c(1,2))
-plot(x1,type='l',xlab='t',ylab=expression(x[1]))
-plot(x2,type='l',xlab='t',ylab=expression(x[2]))
+plot(x1,type="l",xlab="t",ylab=expression(x[1]))
+plot(x2,type="l",xlab="t",ylab=expression(x[2]))
 }
 \references{
 Eamonn Keogh and Jessica Lin (2005). Clustering of

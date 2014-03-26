@@ -16,11 +16,14 @@
 #' \url{http://dx.doi.org/10.1175/JAS-D-13-0182.1}.
 #' @export
 #' @examples
-#' x1 = cbfs(type = 'box', sigma = 1)
-#' x2 = cbfs(type = 'box', sigma = 3)
+#' # generate a box function with white noise
+#' x1 = cbfs(type = "box", sigma = 1)
+#' # generate a box function with higher level noise
+#' x2 = cbfs(type = "box", sigma = 3)
+#' # plot them
 #' par(mfrow=c(1,2))
-#' plot(x1,type='l',xlab='t',ylab=expression(x[1]))
-#' plot(x2,type='l',xlab='t',ylab=expression(x[2]))
+#' plot(x1,type="l",xlab="t",ylab=expression(x[1]))
+#' plot(x2,type="l",xlab="t",ylab=expression(x[2]))
 
 cbfs <- function(type = c("box", "rc", "cr", "sine"), A = 10, sigma = 1) {
     t = 0:127
