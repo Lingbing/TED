@@ -2,7 +2,7 @@
 \alias{eventCluster}
 \title{Cluster detected events}
 \usage{
-eventCluster(events, k0, pca = FALSE)
+eventCluster(events, k0)
 }
 \arguments{
   \item{events}{an object of class `events'}
@@ -37,7 +37,7 @@ for (i in 1:20){
 }
 whitenoise=ts2mat(rnorm(128*20),128)
 # generate x which randomly combine the four types of events with each two of them
-seperated by noise
+# seperated by noise
 x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 plot(x,ty="l")
 # specify a sliding window size
@@ -53,6 +53,7 @@ myclkm=cc$cl
 #   CASES-99 dataset (9.5m)
 ##################################
 w=120; alpha=0.05
+data(CASES99)
 CASESevents=EventDetection(CASES99,w,"red",parallel=TRUE,0.05,"real")
 cc=eventCluster(CASESevents,3)
 cc$center

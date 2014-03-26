@@ -37,7 +37,7 @@
 #' }
 #' whitenoise=ts2mat(rnorm(128*20),128)
 #' # generate x which randomly combine the four types of events with each two of them 
-#' seperated by noise
+#' # seperated by noise
 #' x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 #' plot(x,ty="l")
 #' # specify a sliding window size
@@ -53,6 +53,7 @@
 #' #   CASES-99 dataset (9.5m)
 #' ##################################
 #' w=120; alpha=0.05
+#' data(CASES99)
 #' CASESevents=EventDetection(CASES99,w,"red",parallel=TRUE,0.05,"real")
 #' cc=eventCluster(CASESevents,3)
 #' cc$center
@@ -64,7 +65,7 @@
 #' plot(pca.dim1,pca.dim2,col=myclkm+1,main="PCA plots for k-means clustering",pch=16)
 
 
-eventCluster<-function(events,k0,pca=FALSE){
+eventCluster<-function(events,k0){
   x=events$x
   a=events$start
   b=events$end

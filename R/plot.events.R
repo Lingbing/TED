@@ -27,7 +27,7 @@
 #' }
 #' whitenoise=ts2mat(rnorm(128*20),128)
 #' # generate x which randomly combine the four types of events with each two of them 
-#' seperated by noise
+#' # seperated by noise
 #' x=c(rnorm(128),t(cbind(shapes,whitenoise)))
 #' plot(x,ty='l')
 #' w=128; alpha=0.05
@@ -42,8 +42,8 @@
 #' #   2nd art eg (red noise)
 #' ##################################
 #' set.seed(123)
-#' generate a time series with red noise; this is the same with the one used
-#'  in Kang et al. (2014)
+#' # generate a time series with red noise; this is the same with the one used
+#' # in Kang et al. (2014)
 #' coeff=0.5;s=1
 #' x=c(arima.sim(list(order = c(1,0,0),ar=coeff),n=500,sd=s),
 #'     cbfs_red("rc"),arima.sim(list(order = c(1,0,0),ar=coeff),n=400,sd=s),

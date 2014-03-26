@@ -38,7 +38,7 @@
 #' }
 #' whitenoise=ts2mat(rnorm(128*20),128)
 #' # generate x which randomly combine the four types of events with each two of them 
-#' seperated by noise
+#' # seperated by noise
 #' x=c(t(cbind(shapes,whitenoise)))
 #' plot(x,ty="l")
 #' w=128
